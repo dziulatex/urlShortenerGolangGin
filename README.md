@@ -1,5 +1,6 @@
 # urlShortenerGolangGin
 This project is an url shortener writen in golang, gin framework.
+<br>
 In .env there are such variables as:
 <br>
 SHORTED_URL_LEN length of generated url shorting id.
