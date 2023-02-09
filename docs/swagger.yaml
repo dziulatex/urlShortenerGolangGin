@@ -1,0 +1,61 @@
+definitions:
+  models.ShortenEntityResponse:
+    properties:
+      accessKey:
+        type: string
+      expireDate:
+        type: string
+      lastAccessedDate:
+        type: string
+      shortedUrl:
+        type: string
+      urlToShorten:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /de-short/{id}:
+    get:
+      consumes:
+      - application/json
+      description: gets single shorten url by id
+      parameters:
+      - description: accessKey
+        in: path
+        name: accessKey
+        type: string
+      responses:
+        "302":
+          description: Found
+      summary: Get single shortenUrl by id
+  /shorten:
+    post:
+      consumes:
+      - application/json
+      description: creates shorten url
+      parameters:
+      - description: https://yourbasic.org/golang/structs-explained/
+        in: body
+        name: urlToShorten
+        required: true
+        schema:
+          type: string
+      - description: "2023-02-09T00:00:00Z"
+        in: body
+        name: expireDate
+        schema:
+          type: string
+      - description: randomKeyx
+        in: body
+        name: accessKey
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ShortenEntityResponse'
+swagger: "2.0"

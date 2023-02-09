@@ -1,0 +1,98 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/de-short/{id}": {
+            "get": {
+                "description": "gets single shorten url by id",
+                "consumes": [
+                    "application/json"
+                ],
+                "summary": "Get single shortenUrl by id",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "accessKey",
+                        "name": "accessKey",
+                        "in": "path"
+                    }
+                ],
+                "responses": {
+                    "302": {
+                        "description": "Found"
+                    }
+                }
+            }
+        },
+        "/shorten": {
+            "post": {
+                "description": "creates shorten url",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "description": "https://yourbasic.org/golang/structs-explained/",
+                        "name": "urlToShorten",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "2023-02-09T00:00:00Z",
+                        "name": "expireDate",
+                        "in": "body",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "randomKeyx",
+                        "name": "accessKey",
+                        "in": "body",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ShortenEntityResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.ShortenEntityResponse": {
+            "type": "object",
+            "properties": {
+                "accessKey": {
+                    "type": "string"
+                },
+                "expireDate": {
+                    "type": "string"
+                },
+                "lastAccessedDate": {
+                    "type": "string"
+                },
+                "shortedUrl": {
+                    "type": "string"
+                },
+                "urlToShorten": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
