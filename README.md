@@ -19,4 +19,5 @@ INTERNAL_TOKEN="Sy%beyP&Npj!u+h49=C6" internal token to access debugging endpoin
 <br>
 Swagger doc is there for your inquisitiveness.
 ![image](https://user-images.githubusercontent.com/38464243/217682085-c69d3894-74cb-4023-b5dd-8d153d73fd88.png)
-![image](https://user-images.githubusercontent.com/38464243/217682152-88ed1e8a-8de2-41c1-84d3-60d504a54c5d.png)
+![image](https://user-images.githubusercontent.com/38464243/217683075-c9f3f7ea-5a66-4afd-8ced-eed778b1caad.png)
+
